@@ -3,7 +3,7 @@
 
 """
 This is based on Appendix B of Functional Differential Geometry by
-Garald Jay Sussman and Jack Wisdom.
+Gerald Jay Sussman and Jack Wisdom.
 
 Tuples come in two types: **up** and **down**. We represent both types as
 ordered lists of their components:
