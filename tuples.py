@@ -7,6 +7,15 @@ class Tuple:
     
     def __getitem__(self, index):
         return self._components[index]
+    
+    def __eq__(self, other):
+        if type(self) == type(other) and self._components == other._components:
+            return True
+        else:
+            return False
+    
+    def __ne__(self, other):
+        return not(self.__eq__(other))
 
 
 class UpTuple(Tuple):
@@ -45,3 +54,5 @@ if __name__ == "__main__":
     assert component(0, 1)(up(up("a", "b"), up("c", "d"))) == "b"
     assert repr(up(1, 2)) == "up(1, 2)"
     assert repr(down(1, 2)) == "down(1, 2)"
+    assert up(1, 2) == up(1, 2)
+    assert up(1, 2) != down(1, 2)
