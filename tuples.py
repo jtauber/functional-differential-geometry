@@ -10,11 +10,13 @@ class Tuple:
 
 
 class UpTuple(Tuple):
-    pass
+    def __repr__(self):
+        return "up({})".format(", ".join(str(c) for c in self._components))
 
 
 class DownTuple(Tuple):
-    pass
+    def __repr__(self):
+        return "down({})".format(", ".join(str(c) for c in self._components))
 
 
 up = UpTuple
@@ -41,3 +43,5 @@ if __name__ == "__main__":
     assert ref(up("a", "b", "c"), 1) == "b"
     assert ref(up(up("a", "b"), up("c", "d")), 0, 1) == "b"
     assert component(0, 1)(up(up("a", "b"), up("c", "d"))) == "b"
+    assert repr(up(1, 2)) == "up(1, 2)"
+    assert repr(down(1, 2)) == "down(1, 2)"
