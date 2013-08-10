@@ -29,6 +29,9 @@ class Tuple:
         if type(self) != type(other) or len(self) != len(other):
             raise TypeError("can't subtract incompatible Tuples")
         return self.__class__(*(s - o for (s, o) in zip(self._components, other._components)))
+    
+    def __rmul__(self, scalar):
+        return self.__class__(*(scalar * c for c in self._components))
 
 
 class UpTuple(Tuple):
@@ -78,3 +81,5 @@ if __name__ == "__main__":
         pass
     assert up(1, up(2, 3), 4) + up(5, up(6, 7), 8) == up(6, up(8, 10), 12)
     assert up(4, 6) - up(3, 4) == up(1, 2)
+    assert 2 * up(1, 2) == up(2, 4)
+    assert 3 * up(6, up(8, 10), 12) == up(18, up(24, 30), 36)
