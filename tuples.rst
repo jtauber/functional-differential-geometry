@@ -4,6 +4,8 @@ Tuples
 This is based on Appendix B of Functional Differential Geometry by
 Gerald Jay Sussman and Jack Wisdom.
 
+This is a literate doctest. Run ``python3 -m doctest -v tuples.rst`` to test.
+
 Tuples come in two types: **up** and **down**. We represent both types as
 ordered lists of their components:
 

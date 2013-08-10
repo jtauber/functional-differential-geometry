@@ -7,3 +7,5 @@ and implementing it in Python.
 
 Implements the datastructures in the *Tuples* section of *Appendix B*. I
 actually really wish Python tuples worked this way :-)
+
+`tuples.rst` explains the module.
