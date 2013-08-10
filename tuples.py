@@ -1,4 +1,4 @@
-class Tuple:
+class Tuple(object):
     def __init__(self, *components):
         self._components = components
     
