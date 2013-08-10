@@ -96,3 +96,4 @@ if __name__ == "__main__":
     assert 3 * up(6, up(8, 10), 12) == up(18, up(24, 30), 36)
     assert up(1, 2) * down(3, 4) == 11
     assert up(1, 2) * up(3, 4) == up(up(3, 6), up(4, 8))
+    assert up(6, up(8, 10), 12) * down(2, down(2, 3), 2) == 82
