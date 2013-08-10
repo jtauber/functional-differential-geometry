@@ -8,6 +8,9 @@ class Tuple:
     def __getitem__(self, index):
         return self._components[index]
     
+    def __len__(self):
+        return len(self._components)
+    
     def __eq__(self, other):
         if type(self) == type(other) and self._components == other._components:
             return True
@@ -16,6 +19,16 @@ class Tuple:
     
     def __ne__(self, other):
         return not(self.__eq__(other))
+    
+    def __add__(self, other):
+        if type(self) != type(other) or len(self) != len(other):
+            raise TypeError("can't add incompatible Tuples")
+        return self.__class__(*(s + o for (s, o) in zip(self._components, other._components)))
+
+    def __sub__(self, other):
+        if type(self) != type(other) or len(self) != len(other):
+            raise TypeError("can't subtract incompatible Tuples")
+        return self.__class__(*(s - o for (s, o) in zip(self._components, other._components)))
 
 
 class UpTuple(Tuple):
@@ -56,3 +69,12 @@ if __name__ == "__main__":
     assert repr(down(1, 2)) == "down(1, 2)"
     assert up(1, 2) == up(1, 2)
     assert up(1, 2) != down(1, 2)
+    assert up(1, 2) + up(3, 4) == up(4, 6)
+    assert down(1, 2) + down(3, 4) == down(4, 6)
+    try:
+        up(1, 2) + down(3, 4)
+        assert False
+    except TypeError:
+        pass
+    assert up(1, up(2, 3), 4) + up(5, up(6, 7), 8) == up(6, up(8, 10), 12)
+    assert up(4, 6) - up(3, 4) == up(1, 2)
