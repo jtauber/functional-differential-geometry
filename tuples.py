@@ -1,3 +1,8 @@
+"""
+see ``tuples.rst`` for an explanation.
+"""
+
+
 class Tuple(object):
     def __init__(self, *components):
         self._components = components
