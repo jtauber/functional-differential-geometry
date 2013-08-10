@@ -1,5 +1,5 @@
     This is a literate doctest.
-    Run ``python3 -m doctest -v tuples.rst`` to test.
+    Run ``python -m doctest -v tuples.rst`` to test.
 
 Tuples
 ======
