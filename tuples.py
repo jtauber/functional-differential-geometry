@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-
-
 class Tuple:
     def __init__(self, *components):
         self._components = components
@@ -70,8 +67,3 @@ def component(*indices):
     def _(tup):
         return ref(tup, *indices)
     return _
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testfile("tuples.rst")
