@@ -30,6 +30,13 @@ class Tuple:
             raise TypeError("can't subtract incompatible Tuples")
         return self.__class__(*(s - o for (s, o) in zip(self._components, other._components)))
     
+    def __mul__(self, other):
+        if not isinstance(other, Tuple):
+            return other * self  # defer to __rmul__
+        if self._dual != type(other) or len(self) != len(other):
+            return other.__class__(*(self * c for c in other._components))
+        return sum(s * o for (s, o) in zip(self._components, other._components))
+    
     def __rmul__(self, scalar):
         return self.__class__(*(scalar * c for c in self._components))
 
@@ -46,6 +53,10 @@ class DownTuple(Tuple):
 
 up = UpTuple
 down = DownTuple
+
+
+up._dual = down
+down._dual = up
 
 
 def ref(tup, *indices):
@@ -83,3 +94,5 @@ if __name__ == "__main__":
     assert up(4, 6) - up(3, 4) == up(1, 2)
     assert 2 * up(1, 2) == up(2, 4)
     assert 3 * up(6, up(8, 10), 12) == up(18, up(24, 30), 36)
+    assert up(1, 2) * down(3, 4) == 11
+    assert up(1, 2) * up(3, 4) == up(up(3, 6), up(4, 8))
