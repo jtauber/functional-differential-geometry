@@ -7,7 +7,7 @@ install:
   - pip install coveralls
 # command to run tests
 script:
-  - coverage python -m doctest -v tuples.rst
-  - coverage python -m doctest -v functions.rst
+  - coverage run python -m doctest -v tuples.rst
+  - coverage run python -m doctest -v functions.rst
 after_success:
   - coveralls
