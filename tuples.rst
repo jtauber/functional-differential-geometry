@@ -67,7 +67,7 @@ Scalar multiplication applies recursively:
 >>> 3 * up(6, up(8, 10), 12)
 up(18, up(24, 30), 36)
 
-If you multiple two tuples of opposite types but with the same number of
+If you multiply two tuples of opposite types but with the same number of
 components, the result is the sum of the pairwise-products:
 
 >>> up(1, 2) * down(3, 4)
