@@ -21,3 +21,9 @@ Implements the functional capabilities described in the *Functions* section of
 *Appendix B*. I guess I wish Python functions worked this way too :-)
 
 `functions.rst` explains the module.
+
+## symbolic.py
+
+Implements some of the symbolic value functionality needed for *Appendix B*.
+
+`symbolic.rst` explains the module.
