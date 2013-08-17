@@ -6,3 +6,4 @@ python:
 # command to run tests
 script:
   - python -m doctest -v tuples.rst
+  - python -m doctest -v functions.rst
