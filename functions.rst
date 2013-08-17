@@ -12,7 +12,7 @@ in our own ``Function`` class.
 
 >>> from functions import Function
 
-The construction of ``Function`` just takes a Python callable so could be an
+The constructor of ``Function`` just takes a Python callable so could be an
 inline lambda:
 
 >>> square = Function(lambda x: x**2)
