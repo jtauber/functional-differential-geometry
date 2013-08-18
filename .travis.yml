@@ -3,7 +3,10 @@ python:
   - "2.7"
   - "3.3"
 # command to install dependencies
+install:
+  - pip install coveralls
 # command to run tests
 script:
-  - python -m doctest -v tuples.rst
-  - python -m doctest -v functions.rst
+  - coverage run run_doctests.py
+after_success:
+  - coveralls

@@ -41,6 +41,10 @@ kinds of arguments:
 >>> f(2) == square(2) + cube(2)
 True
 
+>>> f = cube - square
+>>> f(3) == cube(3) - square(3)
+True
+
 >>> g = cube * sin
 >>> g(2) == cube(2) * sin(2)
 True

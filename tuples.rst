@@ -29,6 +29,15 @@ components:
 >>> up(1, 2) == down(1, 2)
 False
 
+Two tuples of the same type are different if they have a different number of
+components or just different components:
+
+>>> up(1, 2) != up(1, 2, 3)
+True
+
+>>> up(1, 2) != up(1, 3)
+True
+
 Tuples of the same type can be added if they have the same number of
 components and the result is another tuple of that type with the
 components pairwise-added:
@@ -39,12 +48,17 @@ up(4, 6)
 >>> down(1, 2) + down(3, 4)
 down(4, 6)
 
-You cannot add two tuples of different types:
+You cannot add or subtract two tuples of different types:
 
 >>> up(1, 2) + down(3, 4)
 Traceback (most recent call last):
     ....
 TypeError: can't add incompatible Tuples
+
+>>> up(1, 2) - down(3, 4)
+Traceback (most recent call last):
+    ....
+TypeError: can't subtract incompatible Tuples
 
 Tuples can be nested and addition applies recursively:
 
