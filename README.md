@@ -6,6 +6,7 @@ and implementing it in Python.
 The modules should work in both Python 2 and 3.
 
 [![Build Status](https://travis-ci.org/jtauber/functional-differential-geometry.png?branch=master)](https://travis-ci.org/jtauber/functional-differential-geometry)
+[![Coverage Status](https://coveralls.io/repos/jtauber/functional-differential-geometry/badge.png?branch=master)](https://coveralls.io/r/jtauber/functional-differential-geometry?branch=master)
 
 ## tuples.py
 
