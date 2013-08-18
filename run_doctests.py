@@ -3,5 +3,5 @@
 
 import doctest
 
-for filename in ["tuples.rst", "functions.rst"]:
+for filename in ["tuples.rst", "functions.rst", "symbolic.rst"]:
     doctest.testfile(filename, verbose=True)
