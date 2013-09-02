@@ -35,8 +35,8 @@ differentiation to be more readable.
 
 `simplification.rst` explains the module.
 
-## differentation.py
+## differentiation.py
 
 Very basic symbolic differentiation (still in progress).
 
-`differentation.rst` explains the module.
+`differentiation.rst` explains the module.
