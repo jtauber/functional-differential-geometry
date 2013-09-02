@@ -9,6 +9,12 @@ class Expr(object):
     def __radd__(self, addend):
         return Add(addend, self)
     
+    def __sub__(self, subtrahend):
+        return Sub(self, subtrahend)
+    
+    def __rsub__(self, minuend):
+        return Sub(minuend, self)
+    
     def __mul__(self, multiplicand):
         return Mul(self, multiplicand)
     
@@ -67,6 +73,11 @@ class BinOp(Expr):
 class Add(BinOp):
     opsymbol = "+"
     op = operator.add
+
+
+class Sub(BinOp):
+    opsymbol = "-"
+    op = operator.sub
 
 
 class Mul(BinOp):
