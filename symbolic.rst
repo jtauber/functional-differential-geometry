@@ -77,6 +77,19 @@ Numbers
 Internally, numbers are wrapped in a ``Num`` class which is also an ``Expr``.
 
 >>> from symbolic import Num
+
+>>> Num(2) == Num(2)
+True
+
+>>> Num(2) == 2
+True
+
+>>> 2 == Num(2)
+True
+
+>>> Num(2) != Num(3)
+True
+
 >>> Num(3) + Num(2)
 (3 + 2)
 

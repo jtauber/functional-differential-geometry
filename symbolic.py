@@ -28,6 +28,17 @@ class Num(Expr):
     
     def __call__(self, **kwargs):
         return self.arg1
+    
+    def __eq__(self, other):
+        if isinstance(other, Num) and self.arg1 == other.arg1:
+            return True
+        elif isinstance(other, numbers.Number) and self.arg1 == other:
+            return True
+        else:
+            return False
+    
+    def __ne__(self, other):
+        return not self == other
 
 
 class Sym(Expr):
