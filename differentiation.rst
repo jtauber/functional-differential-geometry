@@ -25,3 +25,17 @@ Very basic differentation support exists for now.
 
 >>> D(x ** 2, x)
 (2 * x)
+
+>>> y = Sym("y")
+>>> D(y, x)
+0
+
+>>> D(x ** x, x)
+Traceback (most recent call last):
+    ....
+NotImplementedError: haven't implemented differentiation of powers in the general case
+
+>>> D("can differentiate a string!", x)
+Traceback (most recent call last):
+    ....
+TypeError: can't handle <type 'str'>
