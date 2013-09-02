@@ -9,6 +9,12 @@ class Expr(object):
     def __radd__(self, addend):
         return Add(addend, self)
     
+    def __sub__(self, subtrahend):
+        return Sub(self, subtrahend)
+    
+    def __rsub__(self, minuend):
+        return Sub(minuend, self)
+    
     def __mul__(self, multiplicand):
         return Mul(self, multiplicand)
     
@@ -19,7 +25,7 @@ class Expr(object):
         return Pow(self, exponent)
     
 
-class Num(object):
+class Num(Expr):
     def __init__(self, arg1):
         self.arg1 = arg1
     
@@ -28,6 +34,17 @@ class Num(object):
     
     def __call__(self, **kwargs):
         return self.arg1
+    
+    def __eq__(self, other):
+        if isinstance(other, Num) and self.arg1 == other.arg1:
+            return True
+        elif isinstance(other, numbers.Number) and self.arg1 == other:
+            return True
+        else:
+            return False
+    
+    def __ne__(self, other):
+        return not self == other
 
 
 class Sym(Expr):
@@ -56,6 +73,11 @@ class BinOp(Expr):
 class Add(BinOp):
     opsymbol = "+"
     op = operator.add
+
+
+class Sub(BinOp):
+    opsymbol = "-"
+    op = operator.sub
 
 
 class Mul(BinOp):

@@ -69,3 +69,47 @@ deferred:
 
 >>> z(x=5)(y=7)
 12
+
+
+Numbers
+-------
+
+Internally, numbers are wrapped in a ``Num`` class which is also an ``Expr``.
+
+>>> from symbolic import Num
+
+>>> Num(2) == Num(2)
+True
+
+>>> Num(2) == 2
+True
+
+>>> 2 == Num(2)
+True
+
+>>> Num(2) != Num(3)
+True
+
+>>> Num(3) + Num(2)
+(3 + 2)
+
+>>> Num(3) + 2
+(3 + 2)
+
+>>> 2 + Num(3)
+(2 + 3)
+
+>>> Num(3) * Num(2)
+(3 * 2)
+
+>>> Num(3) * 2
+(3 * 2)
+
+>>> 2 * Num(3)
+(2 * 3)
+
+>>> Num(6) - 2
+(6 - 2)
+
+>>> 5 - Num(2)
+(5 - 2)
