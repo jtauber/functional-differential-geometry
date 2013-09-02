@@ -35,3 +35,10 @@ x
 
 >>> simplify((0 * x) + (1 * 2))
 2
+
+>>> from symbolic import Num
+>>> simplify(Num(2) - Num(1))
+1
+
+>>> simplify(x ** 1)
+x
