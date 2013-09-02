@@ -52,6 +52,9 @@ x
 >>> simplify(0 - x)
 (-1 * x)
 
+>>> simplify(x ** 2)
+(x ** 2)
+
 >>> simplify("can't simplify a string")
 Traceback (most recent call last):
     ....
