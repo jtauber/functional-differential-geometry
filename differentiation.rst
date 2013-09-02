@@ -4,6 +4,8 @@
 Differentiation
 ===============
 
+Very basic differentation support exists for now.
+
 >>> from symbolic import Sym
 >>> from differentiation import D
 
@@ -22,4 +24,4 @@ Differentiation
 2
 
 >>> D(x ** 2, x)
-2 * x
+(2 * x)
