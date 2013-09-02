@@ -30,9 +30,6 @@ x
 >>> simplify(x * 1)
 x
 
->>> simplify(1 * 2)
-2
-
 >>> simplify((0 * x) + (1 * 2))
 2
 
@@ -40,5 +37,23 @@ x
 >>> simplify(Num(2) - Num(1))
 1
 
+>>> simplify(Num(1) * Num(2))
+2
+
+>>> simplify(Num(1) + Num(2))
+3
+
 >>> simplify(x ** 1)
 x
+
+>>> simplify(x - 0)
+x
+
+>>> simplify(0 - x)
+(-1 * x)
+
+>>> simplify("can't simplify a string")
+Traceback (most recent call last):
+    ....
+TypeError: can't handle <type 'str'>
+
