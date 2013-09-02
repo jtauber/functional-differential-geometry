@@ -27,3 +27,16 @@ Implements the functional capabilities described in the *Functions* section of
 Implements some of the symbolic value functionality needed for *Appendix B*.
 
 `symbolic.rst` explains the module.
+
+## simplification.py
+
+Implements some basic simplification of expressions needed for the results of
+differentiation to be more readable.
+
+`simplification.rst` explains the module.
+
+## differentation.py
+
+Very basic symbolic differentiation (still in progress).
+
+`differentation.rst` explains the module.
