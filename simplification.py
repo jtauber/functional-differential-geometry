@@ -11,7 +11,7 @@ def simplify(expr):
     if isinstance(expr, numbers.Number):
         return expr
     elif isinstance(expr, Num):
-        return expr
+        return expr.arg1
     elif isinstance(expr, Sym):
         return expr
     elif isinstance(expr, Add):
