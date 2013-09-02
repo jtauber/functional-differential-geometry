@@ -26,6 +26,6 @@ def D(expr, wrt):
         if expr.arg1 == wrt and isinstance(expr.arg2, Num):
             return simplify(expr.arg2 * (expr.arg1 ** (expr.arg2 - 1)))
         else:
-            raise NotImplemented("haven't implemented differentiation of powers in the general case")
+            raise NotImplementedError("haven't implemented differentiation of powers in the general case")
     else:
         raise TypeError("can't handle {}".format(type(expr)))
