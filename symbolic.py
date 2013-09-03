@@ -23,7 +23,7 @@ class Expr(object):
     
     def __pow__(self, exponent):
         return Pow(self, exponent)
-    
+
 
 class Num(Expr):
     def __init__(self, arg1):
