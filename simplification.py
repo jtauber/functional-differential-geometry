@@ -4,7 +4,7 @@ see ``simplification.rst`` for an explanation.
 
 import numbers
 
-from symbolic import *
+from symbolic import Num, Sym, Add, Sub, Mul, Pow
 
 
 def simplify(expr):

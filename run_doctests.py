@@ -3,5 +3,11 @@
 
 import doctest
 
-for filename in ["tuples.rst", "functions.rst", "symbolic.rst", "simplification.rst", "differentiation.rst"]:
+for filename in [
+    "tuples.rst",
+    "functions.rst",
+    "symbolic.rst",
+    "simplification.rst",
+    "differentiation.rst"
+]:
     doctest.testfile(filename, verbose=True)

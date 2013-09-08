@@ -8,7 +8,7 @@ from simplification import simplify
 from symbolic import Num, Sym, Add, Mul, Pow
 
 
-def D(expr, wrt): # pylint: disable=C0103
+def D(expr, wrt):  # pylint: disable=C0103
     """
     Differentiate ``expr`` with respect to ``wrt``.
     """
