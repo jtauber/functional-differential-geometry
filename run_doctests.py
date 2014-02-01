@@ -8,6 +8,7 @@ for filename in [
     "functions.rst",
     "symbolic.rst",
     "simplification.rst",
-    "differentiation.rst"
+    "differentiation.rst",
+    "symbolic_tuples.rst",
 ]:
     doctest.testfile(filename, verbose=True)

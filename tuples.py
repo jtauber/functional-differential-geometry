@@ -2,8 +2,10 @@
 see ``tuples.rst`` for an explanation.
 """
 
+from symbolic import Sym, Expr, Add
 
-class Tuple(object):
+
+class Tuple(Expr):
     def __init__(self, *components):
         self._components = components
 
@@ -24,7 +26,10 @@ class Tuple(object):
 
     def __add__(self, other):
         if type(self) != type(other) or len(self) != len(other):
-            raise TypeError("can't add incompatible Tuples")
+            if isinstance(other, Sym):
+                return Add(self, other)
+            else:
+                raise TypeError("can't add incompatible Tuples")
         return self.__class__(
             *(s + o for (s, o) in zip(self._components, other._components))
         )
@@ -47,6 +52,10 @@ class Tuple(object):
 
     def __rmul__(self, scalar):
         return self.__class__(*(scalar * c for c in self._components))
+
+    def __call__(self, **kwargs):
+        # @@@ need to apply to components
+        return self
 
 
 class UpTuple(Tuple):
