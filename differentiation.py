@@ -33,7 +33,7 @@ def D(expr, wrt):  # pylint: disable=C0103
             derivative = simplify(expr.arg2 * (expr.arg1 ** (expr.arg2 - 1)))
         else:
             raise NotImplementedError(
-                "haven't implemented differentiation of powers in general case"
+                "haven't implemented differentiation of powers in the general case"
             )
     else:
         raise TypeError("can't handle {}".format(type(expr)))
