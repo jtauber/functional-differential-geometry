@@ -58,5 +58,5 @@ x
 >>> simplify("can't simplify a string")
 Traceback (most recent call last):
     ....
-TypeError: can't handle <type 'str'>
+TypeError: can't handle str
 

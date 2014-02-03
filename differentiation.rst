@@ -38,4 +38,4 @@ NotImplementedError: haven't implemented differentiation of powers in the genera
 >>> D("can differentiate a string!", x)
 Traceback (most recent call last):
     ....
-TypeError: can't handle <type 'str'>
+TypeError: can't handle str

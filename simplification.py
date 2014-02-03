@@ -53,4 +53,4 @@ def simplify(expr):
         else:
             return arg1 ** arg2
     else:
-        raise TypeError("can't handle {}".format(type(expr)))
+        raise TypeError("can't handle {}".format(type(expr).__name__))

@@ -36,6 +36,6 @@ def D(expr, wrt):  # pylint: disable=C0103
                 "haven't implemented differentiation of powers in the general case"
             )
     else:
-        raise TypeError("can't handle {}".format(type(expr)))
+        raise TypeError("can't handle {}".format(type(expr).__name__))
 
     return derivative
