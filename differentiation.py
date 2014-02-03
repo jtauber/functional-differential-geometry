@@ -34,7 +34,7 @@ def D(expr, wrt):  # pylint: disable=C0103
         else:
             raise NotImplementedError(
                 "haven't implemented differentiation of"
-                "powers in the general case"
+                " powers in the general case"
             )
     else:
         raise TypeError("can't handle {}".format(type(expr).__name__))
