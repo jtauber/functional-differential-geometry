@@ -2,7 +2,7 @@
 see ``tuples.rst`` for an explanation.
 """
 
-from symbolic import Sym, Expr, Add
+from symbolic import Sym, Expr, Add, Sub
 
 
 class Tuple(Expr):
@@ -39,11 +39,18 @@ class Tuple(Expr):
             raise TypeError("addend must be tuple or symbol")
 
     def __sub__(self, other):
-        if type(self) != type(other) or len(self) != len(other):
-            raise TypeError("can't subtract incompatible Tuples")
-        return self.__class__(
-            *(s - o for (s, o) in zip(self._components, other._components))
-        )
+        if isinstance(other, Tuple):
+            if type(self) != type(other) or len(self) != len(other):
+                raise TypeError("can't subtract incompatible Tuples")
+            else:
+                return self.__class__(
+                    *(s - o for (s, o) in zip(
+                        self._components, other._components))
+                )
+        elif isinstance(other, Sym):
+            return Sub(self, other)
+        else:
+            raise TypeError("subtrahend must be tuple or symbol")
 
     def __mul__(self, other):
         if not isinstance(other, Tuple):
