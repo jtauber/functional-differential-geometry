@@ -55,3 +55,41 @@ up(1, 1)
 Traceback (most recent call last):
     ....
 TypeError: subtrahend must be tuple or symbol
+
+>>> r = Sym("s") * up(1, 2)
+>>> r(s=2)
+up(2, 4)
+
+>>> r(s=down(3, 4))
+11
+
+>>> r = up(1, 2) * Sym("s")
+>>> r(s=2)
+up(2, 4)
+
+>>> r(s=down(3, 4))
+11
+
+>>> r(s=up(3, 4))
+up(up(3, 6), up(4, 8))
+
+>>> r = 2 * Sym("s")
+>>> r(s=up(1, 2))
+up(2, 4)
+
+>>> r = Sym("s") * 2
+>>> r(s=up(1, 2))
+up(2, 4)
+
+>>> r = Sym("s") * Sym("t")
+>>> r(s=2, t=up(1, 2))
+up(2, 4)
+
+>>> r(s=up(1, 2), t=2)
+up(2, 4)
+
+>>> r(s=up(1, 2), t=down(3, 4))
+11
+
+>>> r(s=up(1, 2), t=up(3, 4))
+up(up(3, 6), up(4, 8))
