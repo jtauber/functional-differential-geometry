@@ -4,9 +4,11 @@ python:
   - "3.3"
 # command to install dependencies
 install:
+  - pip install flake8
   - pip install coveralls
 # command to run tests
 script:
-  - coverage run run_doctests.py
+  - flake8 .
+  - coverage run --branch --omit=run_doctests.py run_doctests.py
 after_success:
   - coveralls
