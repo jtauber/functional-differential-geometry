@@ -25,14 +25,18 @@ class Tuple(Expr):
         return not(self.__eq__(other))
 
     def __add__(self, other):
-        if type(self) != type(other) or len(self) != len(other):
-            if isinstance(other, Sym):
-                return Add(self, other)
-            else:
+        if isinstance(other, Tuple):
+            if type(self) != type(other) or len(self) != len(other):
                 raise TypeError("can't add incompatible Tuples")
-        return self.__class__(
-            *(s + o for (s, o) in zip(self._components, other._components))
-        )
+            else:
+                return self.__class__(
+                    *(s + o for (s, o) in zip(
+                        self._components, other._components))
+                )
+        elif isinstance(other, Sym):
+            return Add(self, other)
+        else:
+            raise TypeError("addend must be tuple or symbol")
 
     def __sub__(self, other):
         if type(self) != type(other) or len(self) != len(other):
