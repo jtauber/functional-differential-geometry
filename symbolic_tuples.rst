@@ -13,6 +13,11 @@ Although not covered in Appendix B, tuples should really be symbolic.
 >>> y(x=up(3, 4))
 up(4, 6)
 
+>>> y = up(1, 2) + "a string!"
+Traceback (most recent call last):
+    ....
+TypeError: addend must be tuple or symbol
+
 >>> b = Sym("a") + down(3, 4)
 >>> b(a=down(1, 2))
 down(4, 6)
@@ -41,3 +46,12 @@ up(1, n)
 
 >>> m(n=2)
 up(1, 2)
+
+>>> o = up(1, 2) - Sym("p")
+>>> o(p=up(0, 1))
+up(1, 1)
+
+>>> q = up(1, 2) - "a string!"
+Traceback (most recent call last):
+    ....
+TypeError: subtrahend must be tuple or symbol
