@@ -54,8 +54,7 @@ class Tuple(Expr):
         return self.__class__(*(scalar * c for c in self._components))
 
     def __call__(self, **kwargs):
-        # @@@ need to apply to components
-        return self
+        return self.__class__(*((c(**kwargs) if isinstance(c, Expr) else c) for c in self._components))
 
 
 class UpTuple(Tuple):

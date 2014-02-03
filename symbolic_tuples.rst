@@ -34,3 +34,10 @@ down(10, 15)
 Traceback (most recent call last):
     ....
 TypeError: can't add incompatible Tuples
+
+>>> m = up(1, Sym("n"))
+>>> m
+up(1, n)
+
+>>> m(n=2)
+up(1, 2)
