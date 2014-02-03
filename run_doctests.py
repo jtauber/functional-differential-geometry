@@ -2,6 +2,9 @@
 # coverage run -m doctest -v <rst-file>
 
 import doctest
+import sys
+
+fails = 0
 
 for filename in [
     "tuples.rst",
@@ -11,4 +14,8 @@ for filename in [
     "differentiation.rst",
     "symbolic_tuples.rst",
 ]:
-    doctest.testfile(filename, verbose=True)
+    result = doctest.testfile(filename)
+    fails += result.failed
+
+if fails:
+    sys.exit(1)
