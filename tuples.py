@@ -2,7 +2,7 @@
 see ``tuples.rst`` for an explanation.
 """
 
-from symbolic import Sym, Expr, Add, Sub, Mul
+from symbolic import Expr, Add, Sub, Mul
 
 
 class Tuple(Expr):
@@ -33,7 +33,7 @@ class Tuple(Expr):
                     *(s + o for (s, o) in zip(
                         self._components, other._components))
                 )
-        elif isinstance(other, Sym):
+        elif isinstance(other, Expr):
             return Add(self, other)
         else:
             raise TypeError("addend must be tuple or symbol")
@@ -47,7 +47,7 @@ class Tuple(Expr):
                     *(s - o for (s, o) in zip(
                         self._components, other._components))
                 )
-        elif isinstance(other, Sym):
+        elif isinstance(other, Expr):
             return Sub(self, other)
         else:
             raise TypeError("subtrahend must be tuple or symbol")
@@ -61,7 +61,7 @@ class Tuple(Expr):
                     s * o for (s, o) in zip(
                         self._components, other._components)
                 )
-        elif isinstance(other, Sym):
+        elif isinstance(other, Expr):
             return Mul(self, other)
         else:
             return other * self  # defer to __rmul__
