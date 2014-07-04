@@ -5,8 +5,8 @@ and implementing it in Python.
 
 The modules should work in both Python 2 and 3.
 
-[![Build Status](https://travis-ci.org/jtauber/functional-differential-geometry.png?branch=master)](https://travis-ci.org/jtauber/functional-differential-geometry)
-[![Coverage Status](https://coveralls.io/repos/jtauber/functional-differential-geometry/badge.png?branch=master)](https://coveralls.io/r/jtauber/functional-differential-geometry?branch=master)
+[![Build Status](http://img.shields.io/travis/jtauber/functional-differential-geometry.svg)](https://travis-ci.org/jtauber/functional-differential-geometry)
+[![Coverage Status](http://img.shields.io/coveralls/jtauber/functional-differential-geometry.svg)](https://coveralls.io/r/jtauber/functional-differential-geometry?branch=master)
 
 ## tuples.py
 
